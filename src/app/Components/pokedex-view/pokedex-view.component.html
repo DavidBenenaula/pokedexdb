@@ -1,0 +1,24 @@
+<section class="pokedex-view">
+    <span class="white-circle">
+        <span class="blue-circle"></span>
+    </span>
+    <div class="container pokemon">
+        <div class="search-container">
+            <input type="number" [(ngModel)]="pokemonID" placeholder="Ingrese el número de Pokémon" class="search-input">
+            <button (click)="buscarPokemon()" class="search-button">Buscar</button>
+          </div>
+      <app-pokemon [solicitarImagen]="pokemonImagen"
+      (clickPokemon)="handlePokemon($event)"
+      ></app-pokemon>
+    </div>
+    <div class="container graph">
+        <div class="stats-container">
+            <app-grafico [salud]="hearts" [energia]="5" [ataque]="5" [defensa]="5"></app-grafico>
+        </div>   
+        <div class="button-container">
+            <button (click)="atacar()" class="attack-button">Atacado</button>
+            <button (click)="curar()" class="heal-button">Curar</button>
+          </div>  
+    </div>
+</section>
+
